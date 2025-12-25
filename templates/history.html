@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+    <div class="history-header">
+        <h2>Calculation History</h2>
+        {% if records %}
+        <form method="POST" action="{{ url_for('diet.delete_history') }}" onsubmit="return confirm('Are you sure you want to delete your entire history? This action cannot be undone.');">
+            <button type="submit" class="btn delete-btn">
+                <i class="bi bi-trash"></i> Delete All History
+            </button>
+        </form>
+        {% endif %}
+    </div>
+
+    {% if records %}
+    <table class="history-table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Weight (kg)</th>
+                <th>Height (cm)</th>
+                <th>BMI</th>
+                <th>Goal</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for record in records %}
+            <tr>
+                <td>{{ record.name }}</td>
+                <td>{{ record.weight }}</td>
+                <td>{{ record.height }}</td>
+                <td>{{ record.bmi }}</td>
+                <td>{{ record.goal|title }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% else %}
+    <div class="alert" style="margin-top: 20px;">
+        <p>You have no saved history.</p>
+    </div>
+    {% endif %}
+</div>
+{% endblock %}

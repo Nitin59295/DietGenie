@@ -1,0 +1,152 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container">
+    <h2>AI Diet Assistant</h2>
+    <p>Smart diet planning using trained AI model</p>
+
+    <!-- ================= FOOD ANALYZER ================= -->
+    <div class="results-card">
+        <h4>1. Analyze a Food</h4>
+
+        <div class="form-group"><label>Calories</label><input type="number" id="calories"></div>
+        <div class="form-group"><label>Protein (g)</label><input type="number" id="protein"></div>
+        <div class="form-group"><label>Carbs (g)</label><input type="number" id="carbs"></div>
+        <div class="form-group"><label>Fat (g)</label><input type="number" id="fat"></div>
+        <div class="form-group"><label>Fiber (g)</label><input type="number" id="fiber"></div>
+
+        <button onclick="analyzeFood()" class="btn">Analyze Food</button>
+        <div id="foodResult" class="ai-response-box"></div>
+    </div>
+
+    <hr>
+
+    <!-- ================= MEAL RECOMMENDATION ================= -->
+    <div class="results-card">
+        <h4>2. Meal Recommendation</h4>
+
+        <div class="form-group">
+            <label>Diet Goal</label>
+            <select id="goal">
+                <option value="weight_loss">Weight Loss</option>
+                <option value="maintenance">Maintenance</option>
+                <option value="weight_gain">Weight Gain</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label>Max Calories per Food</label>
+            <input type="number" id="maxCalories" value="300">
+        </div>
+
+        <button onclick="recommendMeals()" class="btn">Recommend Meals</button>
+        <div id="mealResult" class="ai-response-box"></div>
+    </div>
+
+    <hr>
+
+    <!-- ================= FULL DAY DIET PLANNER ================= -->
+    <div class="results-card">
+        <h4>3. Full Day Diet Planner</h4>
+
+        <div class="form-group">
+            <label>Daily Calorie Target</label>
+            <input type="number" id="dailyCalories" placeholder="e.g. 1800">
+        </div>
+
+        <div class="form-group">
+            <label>Diet Goal</label>
+            <select id="dayGoal">
+                <option value="weight_loss">Weight Loss</option>
+                <option value="maintenance">Maintenance</option>
+                <option value="weight_gain">Weight Gain</option>
+            </select>
+        </div>
+
+        <button onclick="generateDayPlan()" class="btn">Generate Day Plan</button>
+        <div id="dayPlanResult" class="ai-response-box"></div>
+    </div>
+</div>
+
+<script>
+/* ---------- FOOD ANALYZER ---------- */
+async function analyzeFood() {
+    const payload = {
+        calories: calories.value,
+        protein: protein.value,
+        carbs: carbs.value,
+        fat: fat.value,
+        fiber: fiber.value
+    };
+
+    foodResult.innerHTML = "🧠 Analyzing...";
+
+    const res = await fetch("/ai/predict-food-goal", {
+        method: "POST",
+        headers: {"Content-Type": "application/json"},
+        body: JSON.stringify(payload)
+    });
+
+    const data = await res.json();
+    foodResult.innerHTML = data.error
+        ? `<p style="color:red">${data.error}</p>`
+        : `<strong>Best suited for:</strong> ${data.predicted_goal.replace("_", " ").toUpperCase()}`;
+}
+
+/* ---------- MEAL RECOMMENDATION ---------- */
+async function recommendMeals() {
+    mealResult.innerHTML = "🍽 Fetching meals...";
+
+    const res = await fetch("/ai/recommend-meal", {
+        method: "POST",
+        headers: {"Content-Type": "application/json"},
+        body: JSON.stringify({
+            goal: goal.value,
+            max_calories: maxCalories.value
+        })
+    });
+
+    const data = await res.json();
+    if (data.error) {
+        mealResult.innerHTML = `<p style="color:red">${data.error}</p>`;
+        return;
+    }
+
+    let html = "<ul>";
+    data.recommendations.forEach(food => {
+        html += `<li><strong>${food.food_name}</strong>
+            — ${food.calories} kcal | P: ${food.protein}g | F: ${food.fiber}g</li>`;
+    });
+    html += "</ul>";
+
+    mealResult.innerHTML = html;
+}
+
+/* ---------- FULL DAY PLANNER ---------- */
+async function generateDayPlan() {
+    dayPlanResult.innerHTML = "📅 Generating plan...";
+
+    const res = await fetch("/ai/generate-day-plan", {
+        method: "POST",
+        headers: {"Content-Type": "application/json"},
+        body: JSON.stringify({
+            goal: dayGoal.value,
+            daily_calories: dailyCalories.value
+        })
+    });
+
+    const plan = await res.json();
+
+    let html = "";
+    for (const meal in plan) {
+        html += `<h5>${meal.toUpperCase()} (Target: ${plan[meal].target_calories} kcal)</h5><ul>`;
+        plan[meal].foods.forEach(f => {
+            html += `<li><strong>${f.food_name}</strong>
+                — ${f.calories} kcal | P: ${f.protein}g</li>`;
+        });
+        html += "</ul>";
+    }
+
+    dayPlanResult.innerHTML = html;
+}
+</script>
+{% endblock %}

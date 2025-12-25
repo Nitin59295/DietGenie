@@ -1,0 +1,136 @@
+fdc_id,calories,carbs,fat,fiber,protein,food_name,goal
+321358,229.0,14.9,17.1,5.4,7.35,"Hummus, commercial",maintenance
+321359,50.0,4.91,1.9,,3.35,"Milk, reduced fat, fluid, 2% milkfat, with added vitamin A and vitamin D",maintenance
+321360,27.0,5.51,0.63,2.1,0.83,"Tomatoes, grape, raw",maintenance
+321611,21.0,4.11,0.39,,1.04,"Beans, snap, green, canned, regular pack, drained solids",maintenance
+321900,32.0,6.29,0.34,2.4,2.57,"Broccoli, raw",maintenance
+322228,43.0,5.19,0.95,,3.38,"Milk, lowfat, fluid, 1% milkfat, with added vitamin A and vitamin D",maintenance
+322559,34.0,4.89,0.08,,3.43,"Milk, nonfat, fluid, with added vitamin A and vitamin D (fat free or skim)",maintenance
+322892,60.0,4.67,3.2,,3.28,"Milk, whole, 3.25% milkfat, with added vitamin D",maintenance
+323121,314.0,2.89,28.0,,11.7,"Frankfurter, beef, unheated",weight_gain
+323294,620.0,16.2,57.8,11.0,20.4,"Nuts, almonds, dry roasted, with salt added",weight_gain
+323444,157.0,6.86,11.0,,7.81,"Cheese, ricotta, whole milk",maintenance
+323505,35.0,4.42,1.49,4.1,2.92,"Kale, raw",weight_loss
+323604,150.0,0.91,10.3,,12.3,"Egg, whole, raw, frozen, pasteurized",maintenance
+323697,48.0,0.74,0.16,,10.1,"Egg, white, raw, frozen, pasteurized",maintenance
+323793,376.0,6.02,0.65,,79.9,"Egg, white, dried",weight_gain
+324038,29.0,6.74,0.19,1.8,1.44,"Sauce, salsa, ready-to-serve",maintenance
+324157,328.0,3.37,28.7,,13.3,"Sausage, breakfast sausage, beef, pre-cooked, unprepared",weight_gain
+324317,288.0,36.3,14.4,2.4,4.52,"Onion rings, breaded, par fried, frozen, prepared, heated in oven",weight_gain
+324653,12.0,1.99,0.43,1.0,0.48,"Pickles, cucumber, dill or kosher dill",maintenance
+324860,597.0,22.3,51.1,4.8,22.5,"Peanut butter, smooth style, with salt",weight_gain
+325036,421.0,12.4,28.0,,29.6,"Cheese, parmesan, grated",weight_gain
+325198,366.0,5.27,30.6,,18.0,"Cheese, pasteurized process, American, vitamin D fortified",weight_gain
+325287,37.0,7.59,0.7,0.2,0.55,"Grapefruit juice, white, canned or bottled, unsweetened",maintenance
+325430,42.0,10.1,0.27,1.5,0.91,"Peaches, yellow, raw",maintenance
+325524,612.0,17.1,56.1,10.3,21.0,"Seeds, sunflower seed kernels, dry roasted, with salt added",weight_gain
+325658,322.0,2.15,26.2,,18.2,"Sausage, Italian, pork, mild, cooked, pan-fried",weight_gain
+325871,270.0,49.2,3.59,2.3,9.43,"Bread, white, commercially prepared",weight_gain
+325992,169.0,0.93,10.4,,16.7,"Sausage, turkey, breakfast links, mild, raw",maintenance
+326135,393.0,1.44,31.0,,27.0,"Cheese, swiss",weight_gain
+326196,36.0,5.3,1.21,,2.94,"Kale, frozen, cooked, boiled, drained, without salt",maintenance
+326458,37.0,7.92,0.47,3.2,0.81,"Carrots, frozen, unprepared (Includes foods for USDA's Food Distribution Program)",weight_loss
+326698,61.0,5.3,3.38,4.3,4.25,"Mustard, prepared, yellow",weight_loss
+326905,249.0,63.9,0.92,9.8,3.3,"Figs, dried, uncooked",maintenance
+327046,58.0,14.0,0.44,3.0,1.06,"Kiwifruit, green, raw",weight_loss
+327198,34.0,8.16,0.18,0.8,0.82,"Melons, cantaloupe, raw",maintenance
+327357,39.0,9.18,0.28,1.5,1.06,"Nectarines, raw",maintenance
+327501,47.0,11.8,0.15,2.0,0.91,"Oranges, raw, navels (Includes foods for USDA's Food Distribution Program)",maintenance
+327699,31.0,7.63,0.22,1.8,0.64,"Strawberries, raw",maintenance
+327923,17.0,3.24,0.26,1.8,1.24,"Lettuce, cos or romaine, raw",maintenance
+328637,408.0,2.44,34.0,,23.3,"Cheese, cheddar",weight_gain
+328841,84.0,4.31,2.3,,11.0,"Cheese, cottage, lowfat, 2% milkfat",maintenance
+329370,298.0,4.44,20.4,,23.7,"Cheese, mozzarella, low moisture, part-skim",weight_gain
+329490,575.0,1.87,39.8,,48.1,"Egg, whole, dried",weight_gain
+329596,296.0,0.59,25.1,,15.6,"Egg, yolk, raw, frozen, pasteurized",weight_gain
+329716,654.0,1.07,55.5,,34.2,"Egg, yolk, dried",weight_gain
+329830,326.0,2.07,24.3,,24.5,"Cheese, dry white, queso seco",weight_gain
+330137,61.0,3.64,0.37,,10.3,"Yogurt, Greek, plain, nonfat",maintenance
+330415,83.0,12.2,0.15,0.6,8.06,"Yogurt, Greek, strawberry, nonfat",maintenance
+330458,833.0,0.84,99.1,,0.0,"Oil, coconut",weight_gain
+330869,220.0,0.0,11.6,,27.1,"Turkey, ground, 93% lean, 7% fat, pan-broiled crumbles",maintenance
+331897,156.0,0.0,5.95,,23.9,"Chicken, broilers or fryers, drumstick, meat only, cooked, braised",maintenance
+331960,166.0,0.0,3.24,,32.1,"Chicken, broiler or fryers, breast, skinless, boneless, meat only, cooked, braised",maintenance
+332282,45.0,8.05,1.48,1.8,1.41,"Sauce, pasta, spaghetti/marinara, ready-to-serve",maintenance
+332397,106.0,0.27,3.73,,16.7,"Ham, sliced, pre-packaged, deli meat (96%fat free, water added)",maintenance
+332597,57.0,15.1,0.16,3.1,0.38,"Pears, raw, bartlett (Includes foods for USDA's Food Distribution Program)",weight_loss
+332791,130.0,4.96,12.9,4.0,1.15,"Olives, green, Manzanilla, stuffed with pimiento",maintenance
+332864,346.0,2.63,28.1,,19.3,"Sausage, pork, chorizo, link or ground, cooked, pan-fried",weight_gain
+333008,430.0,69.6,14.3,3.3,5.79,"Cookies, oatmeal, soft, with raisins",weight_gain
+333281,18.0,3.32,0.5,,0.84,"Tomatoes, canned, red, ripe, diced",maintenance
+333374,74.0,0.0,0.45,,16.3,"Fish, haddock, raw",maintenance
+333476,56.0,0.0,0.41,,12.3,"Fish, pollock, raw",maintenance
+334194,90.0,0.08,0.94,,19.0,"Fish, tuna, light, canned in water, drained solids",maintenance
+334247,385.0,99.6,0.32,,0.0,"Sugars, granulated",weight_gain
+334462,260.0,25.5,13.6,1.0,8.88,"Restaurant, Chinese, sweet and sour pork",weight_gain
+334536,174.0,32.5,3.19,,3.84,"Restaurant, Chinese, fried rice, without meat",maintenance
+334628,174.0,15.8,9.04,2.4,7.38,"Restaurant, Latino, tamale, pork",maintenance
+334720,229.0,31.5,9.01,5.8,5.59,"Restaurant, Latino, pupusas con frijoles (pupusas, bean)",maintenance
+334849,155.0,0.0,6.39,,22.8,"Beef, loin, top loin steak, boneless, lip-on, separable lean only, trimmed to 1/8"" fat, choice, raw",maintenance
+334897,176.0,0.0,6.36,,27.7,"Beef, loin, tenderloin roast, separable lean only, boneless, trimmed to 0"" fat, select, cooked, roasted",maintenance
+334898,122.0,0.0,2.48,,23.4,"Beef, round, eye of round roast, boneless, separable lean only, trimmed to 0"" fat, select, raw",maintenance
+334963,123.0,0.0,2.41,,23.7,"Beef, round, top round roast, boneless, separable lean only, trimmed to 0"" fat, select, raw",maintenance
+335061,219.0,0.0,11.4,,27.3,"Beef, short loin, t-bone steak, bone-in, separable lean only, trimmed to 1/8"" fat, choice, cooked, grilled",maintenance
+335109,145.0,0.0,5.32,,22.7,"Beef, short loin, porterhouse steak, separable lean only, trimmed to 1/8"" fat, select, raw",maintenance
+335240,254.0,43.1,3.55,6.0,12.3,"Bread, whole-wheat, commercially prepared",weight_gain
+746758,176.0,0.0,6.36,,27.7,"Beef, loin, tenderloin roast, separable lean only, boneless, trimmed to 0"" fat, select, cooked, roasted",maintenance
+746759,155.0,0.0,6.39,,22.8,"Beef, loin, top loin steak, boneless, lip-on, separable lean only, trimmed to 1/8"" fat, choice, raw",maintenance
+746760,122.0,0.0,2.48,,23.4,"Beef, round, eye of round roast, boneless, separable lean only, trimmed to 0"" fat, select, raw",maintenance
+746761,123.0,0.0,2.41,,23.7,"Beef, round, top round roast, boneless, separable lean only, trimmed to 0"" fat, select, raw",maintenance
+746762,145.0,0.0,5.32,,22.7,"Beef, short loin, porterhouse steak, separable lean only, trimmed to 1/8"" fat, select, raw",maintenance
+746763,219.0,0.0,11.4,,27.3,"Beef, short loin, t-bone steak, bone-in, separable lean only, trimmed to 1/8"" fat, choice, cooked, grilled",maintenance
+746764,37.0,7.92,0.47,3.2,0.81,"Carrots, frozen, unprepared",weight_loss
+746765,326.0,2.07,24.3,,24.5,"Cheese, dry white, queso seco",weight_gain
+746766,157.0,6.86,11.0,,7.81,"Cheese, ricotta, whole milk",maintenance
+746767,393.0,1.44,31.0,,27.0,"Cheese, swiss",weight_gain
+746768,249.0,63.9,0.92,9.8,3.3,"Figs, dried, uncooked",maintenance
+746769,17.0,3.24,0.26,1.8,1.24,"Lettuce, cos or romaine, raw",maintenance
+746770,34.0,8.16,0.18,0.8,0.82,"Melons, cantaloupe, raw",maintenance
+746771,47.0,11.8,0.15,2.0,0.91,"Oranges, raw, navels",maintenance
+746772,43.0,5.18,0.95,,3.38,"Milk, lowfat, fluid, 1% milkfat, with added vitamin A and vitamin D",maintenance
+746773,57.0,15.1,0.16,3.1,0.38,"Pears, raw, bartlett",weight_loss
+746774,260.0,25.5,13.6,1.0,8.88,"Restaurant, Chinese, sweet and sour pork",weight_gain
+746776,34.0,4.92,0.08,,3.43,"Milk, nonfat, fluid, with added vitamin A and vitamin D (fat free or skim)",maintenance
+746777,29.0,6.74,0.19,1.8,1.44,"Sauce, salsa, ready-to-serve",maintenance
+746778,50.0,4.9,1.9,,3.36,"Milk, reduced fat, fluid, 2% milkfat, with added vitamin A and vitamin D",maintenance
+746779,328.0,3.37,28.7,,13.3,"Sausage, breakfast sausage, beef, pre-cooked, unprepared",weight_gain
+746780,322.0,2.15,26.2,,18.2,"Sausage, Italian, pork, mild, cooked, pan-fried",weight_gain
+746781,346.0,2.63,28.1,,19.3,"Sausage, pork, chorizo, link or ground, cooked, pan-fried",weight_gain
+746782,60.0,4.63,3.2,,3.27,"Milk, whole, 3.25% milkfat, with added vitamin D",maintenance
+746783,169.0,0.93,10.4,,16.7,"Sausage, turkey, breakfast links, mild, raw",maintenance
+746784,385.0,99.6,0.32,,0.0,"Sugars, granulated",weight_gain
+746785,220.0,0.0,11.6,,27.1,"Turkey, ground, 93% lean, 7% fat, pan-broiled crumbles",maintenance
+746952,121.0,2.36,3.68,,19.6,"Ham, sliced, restaurant",maintenance
+747429,375.0,6.35,31.1,,17.5,"Cheese, American, restaurant",weight_gain
+747447,31.0,6.27,0.34,2.4,2.57,"Broccoli, raw",maintenance
+747448,31.0,7.63,0.22,1.8,0.64,"Strawberries, raw",maintenance
+747693,117.0,26.8,0.55,,1.11,"Ketchup, restaurant",maintenance
+747997,55.0,2.36,0.0,,10.7,"Eggs, Grade A, Large, egg white",maintenance
+748236,334.0,1.02,28.8,,16.2,"Eggs, Grade A, Large, egg yolk",weight_gain
+748967,148.0,0.96,9.96,0.0,12.4,"Eggs, Grade A, Large, egg whole",maintenance
+749420,500.0,2.1,36.5,,40.9,"Pork, cured, bacon, cooked, restaurant",weight_gain
+789890,366.0,77.3,1.48,,10.9,"Flour, wheat, all-purpose, enriched, bleached",weight_gain
+789951,358.0,73.2,1.48,,13.1,"Flour, wheat, all-purpose, enriched, unbleached",weight_gain
+790018,362.0,74.6,1.7,3.0,12.0,"Flour, wheat, all-purpose, unenriched, unbleached",weight_gain
+790085,370.0,71.2,2.73,10.6,15.1,"Flour, whole wheat, unenriched",weight_gain
+790146,363.0,72.8,1.65,,14.3,"Flour, bread, white, enriched, unbleached",weight_gain
+790214,359.0,79.8,1.3,0.5,6.94,"Flour, rice, white, unenriched",weight_gain
+790276,364.0,80.8,1.74,4.3,6.2,"Flour, corn, yellow, fine meal, enriched",weight_gain
+790577,44.0,9.93,0.1,2.2,0.94,"Onions, red, raw",maintenance
+790646,38.0,8.61,0.05,1.9,0.83,"Onions, yellow, raw",maintenance
+790774,85.0,20.1,0.22,1.7,0.73,"Bananas, overripe, raw",maintenance
+790991,97.0,23.0,0.29,1.7,0.74,"Bananas, ripe and slightly ripe, raw",maintenance
+1104647,143.0,28.2,0.38,2.7,6.62,"Garlic, raw",maintenance
+1104705,366.0,32.9,3.33,,51.1,"Flour, soy, defatted",weight_gain
+1104766,452.0,27.9,20.7,,38.6,"Flour, soy, full-fat",weight_gain
+1104812,365.25,75.5,3.85,,7.19,"Flour, rice, brown",weight_gain
+1104867,358.0,80.1,1.16,,6.69,"Flour, rice, glutinous",weight_gain
+1104913,358.0,77.2,1.64,,8.75,"Flour, pastry, unenriched, unbleached",weight_gain
+1104962,35.0,7.68,0.13,1.2,0.89,"Onions, white, raw",maintenance
+1105073,85.0,20.1,0.22,1.7,0.73,"Bananas, overripe, raw",maintenance
+1105314,97.0,23.0,0.29,1.7,0.74,"Bananas, ripe and slightly ripe, raw",maintenance
+1105430,62.0,14.8,0.21,2.0,0.19,"Apples, red delicious, with skin, raw",maintenance
+1105547,60.0,14.7,0.1,1.7,0.1,"Apples, honeycrisp, with skin, raw",maintenance
+1105664,59.0,14.2,0.14,2.5,0.27,"Apples, granny smith, with skin, raw",maintenance
+1105781,61.0,14.8,0.15,2.1,0.13,"Apples, gala, with skin, raw",maintenance
+1105897,65.0,15.7,0.16,2.1,0.15,"Apples, fuji, with skin, raw",maintenance
