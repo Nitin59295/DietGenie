@@ -1,201 +1,216 @@
-# Calorie Tracker & AI Diet Planner
+# 🥗 Diet Genie – ML-Powered Diet Planner
 
-![Python](https://img.shields.io/badge/Python-3.11+-blue?style=for-the-badge&logo=python)
-![Flask](https://img.shields.io/badge/Flask-2.x-black?style=for-the-badge&logo=flask)
-![SQLite](https://img.shields.io/badge/SQLite-3-blue?style=for-the-badge&logo=sqlite)
+**Diet Genie** is a full-stack, ML-powered diet planning web application built with Flask.
 
-A dynamic web application built with Flask that provides users with a comprehensive suite of tools for diet and nutrition management.  
-The app calculates **BMI**, generates **personalized diet plans**, and leverages the **Google Gemini API** for interactive nutritional advice.
+It generates **goal-based diet plans** using a **custom-trained machine learning model** on USDA food data, with full **Docker support** for cross-platform deployment.
 
 ---
 
-## Screenshots
+## 🚀 Key Highlights
 
-| Homepage | Diet Plan | AI Dashboard |
-| :---: | :---: | :---: |
-| ![Homepage](static/images/screenshots/homepage.png) | ![Diet Plan](static/images/screenshots/diet_plan.png) | ![AI Dashboard](static/images/screenshots/ai_dashboard.png) |
-
-
----
-
-## Key Features
-
-- ** User Authentication** – Secure registration and login system.
-- ** BMI Calculator** – Calculates Body Mass Index.
-- ** Personalized Diet Plans**  
-  - Full-day meal plan based on BMI & goals.  
-  - **Timed eating schedule**.  
-  - Pictures + nutrition info (**calories, protein, fat**).  
-- ** PDF Downloads** – Export diet plans as PDFs.  
-- ** Custom Food Database** – Add your own food items for next diet plan.  
-- ** User History** – Save past BMI & plans, with **Delete History** feature.  
-- ** Advanced AI Dashboard** – Powered by Google Gemini API:  
-  1. Quick Meal Idea  
-  2. Meal Analyzer  
-  3. Full Day Plan Generator  
-  4. Ask Anything Chatbot  
+- **ML-Based Food Classification**
+    - Custom **RandomForest model (v1.0.0)**
+    - Classifies foods into:
+        - `weight_loss`
+        - `maintenance`
+        - `weight_gain`
+- **BMI Calculator**
+- **Full-Day Diet Planner**
+    - Breakfast, Lunch, Dinner
+    - Goal-based calorie distribution
+- **Food Analyzer**
+    - Predicts diet suitability of food items
+- **PDF Diet Plan Export**
+- **User Authentication**
+    - Register / Login
+    - Session-based access
+- **Persistent Storage**
+    - SQLite with Docker volume support
+- **Dockerized Application**
+    - Runs on macOS, Windows, Linux with zero setup
 
 ---
 
-##  Tech Stack
+## 🧠 Machine Learning Details
 
-- **Backend**: Python, Flask, Flask-SQLAlchemy, Flask-Login  
-- **Database**: SQLite  
-- **Frontend**: HTML, CSS, Jinja2, JavaScript  
-- **AI Integration**: Google Gemini API (`google-generativeai`)  
-- **PDF Generation**: WeasyPrint  
-- **Styling**: Bootstrap Icons  
+- **Model**: RandomForestClassifier
+- **Training Data**: USDA FoodData Central
+- **Features Used**:
+    - Calories
+    - Protein
+    - Fat
+    - Carbohydrates
+    - Fiber
+- **Model Versioning**:
+    - v1.0.0 released via **GitHub Releases**
+- **Inference**:
+    - Deterministic predictions
+    - Rule-based constraints for meal realism
 
 ---
 
-##  Project Structure
+## 🧰 Tech Stack
 
-```text
-calorie_app/
-├── .env                  # Secret API keys (Gemini, etc.)
-├── app.py                # Main Flask app entry point
-├── extensions.py         # Shared extensions (SQLAlchemy, LoginManager)
-├── models.py             # Database models
-├── requirements.txt      # Python dependencies
+### Backend
+
+- Python
+- Flask
+- Flask-Login
+- Flask-SQLAlchemy
+
+### Machine Learning
+
+- scikit-learn
+- pandas
+- joblib
+
+### Database
+
+- SQLite
+
+### PDF Generation
+
+- WeasyPrint
+
+### DevOps
+
+- Docker
+- Docker volumes (DB persistence)
+
+---
+
+## 📂 Project Structure
+
+```
+DietGenie/
+├── app.py
+├── Dockerfile
+├── requirements.txt
+├── extensions.py
+├── models.py
 │
-├── instance/
-│   └── calorie_app.db    # SQLite database (auto-generated)
+├── services/
+│   └── ml_service.py
 │
 ├── routes/
-│   ├── __init__.py
-│   ├── ai_routes.py      # AI Dashboard (Gemini-powered features)
-│   ├── auth_routes.py    # Login, Register, Logout
-│   ├── bmi_routes.py     # BMI calculator logic
-│   ├── diet_logic.py     # Core diet plan generation logic
-│   ├── diet_routes.py    # Diet plan display, history, PDF downloads
-│   └── food_routes.py    # Add custom foods
+│   ├── auth_routes.py
+│   ├── bmi_routes.py
+│   ├── diet_routes.py
+│   ├── food_routes.py
+│   └── ai_routes.py
+│
+├── data/
+│   └── food_nutrition.csv
+│
+├── model/
+│   ├── food_goal_model.pkl
+│   └── label_encoder.pkl
+│
+├── instance/
+│   └── calorie_app.db
+│
+├── templates/
+│   └── *.html
 │
 ├── static/
 │   ├── css/
-│   │   └── style.css     # Custom styles
 │   └── images/
-│       ├── hero-image.jpg
-│       └── foods/        # Food item images
-│           ├── roti.jpg
-│           └── ...
-│
-└── templates/
-    ├── base.html
-    ├── index.html
-    ├── login.html
-    ├── register.html
-    ├── bmi.html
-    ├── add_food.html
-    ├── diet.html         # "My Latest Plan" page
-    ├── diet_result.html
-    ├── history.html
-    ├── ai_dashboard.html
-    └── plan_pdf.html     # PDF export template
-```
-
-#  Setup and Installation
-
-### 1. Clone the Repository
-
-```bash
-git clone <your-repository-url>
-cd calorie_app
-
+└── README.md
 ```
 
 ---
 
-### 2. Create & Activate a Virtual Environment
+## 🐳 Run with Docker (Recommended)
 
-**Windows (PowerShell):**
+### 1️⃣ Build the image
 
-```powershell
+```bash
+docker build -t dietgenie .
+```
+
+### 2️⃣ Run the container (with DB persistence)
+
+```bash
+docker run -d \
+  -p 5001:5000 \
+  -v $(pwd)/instance:/app/instance \
+  --name dietgenie_app \
+  dietgenie
+```
+
+### 3️⃣ Initialize the database (first time only)
+
+```bash
+docker exec -it dietgenie_app flask init-db
+```
+
+### 4️⃣ Open in browser
+
+```
+http://localhost:5001
+```
+
+Register → Login → Use the app.
+
+---
+
+## 🧪 Run Without Docker (Optional)
+
+```bash
 python -m venv venv
-.\venv\Scripts\activate
-
-```
-
-**macOS / Linux:**
-
-```bash
-python3 -m venv venv
-source venv/bin/activate
-
-```
-
----
-
-### 3. Install Dependencies
-
-```bash
+source venv/bin/activate   # macOS/Linux
 pip install -r requirements.txt
-
-```
-
- Windows users: If WeasyPrint shows errors, install GTK for Windows.
-
----
-
-### 4. Setup Environment Variables
-
-Create a `.env` file in your project root and add:
-
-```
-GEMINI_API_KEY="your_secret_api_key_here"
-
-```
-
----
-
-# How to Run
-
-**Initialize the Database**
-
-Windows (PowerShell):
-
-```powershell
-$env:FLASK_APP = "app.py"
 flask init-db
-
-```
-
-macOS / Linux:
-
-```bash
-export FLASK_APP=app.py
-flask init-db
-
-```
-
-✔️ Expected output:
-
-```
-Initialized the database successfully.
-
-```
-
----
-
-**Run the Application**
-
-```bash
 python app.py
-
 ```
 
-App will run at  [http://127.0.0.1:5000](http://127.0.0.1:5000/)
+Runs at:
+
+```
+http://127.0.0.1:5000
+```
 
 ---
 
-#  Updating Requirements
+## 📦 ML Model Releases
 
-```bash
-pip freeze > requirements.txt
+ML models are **versioned separately** via GitHub Releases.
 
-```
+- **Latest**: `v1.0.0`
+- Includes:
+    - `food_goal_model.pkl`
+    - `label_encoder.pkl`
 
+➡️ See **Releases** tab for downloadable artifacts.
 
+---
 
+## 🛣️ Roadmap
 
+- ML model v2 (better food diversity)
+- Weekly meal planner
+- Nutrition explanation engine
+- Admin dashboard
+- Cloud deployment (Render / AWS)
 
+---
 
+## 👤 Author
+
+**Nitin Bhatia**
+
+MCA (AI & ML)
+
+Python | Flask | Machine Learning | Docker
+
+---
+
+## ⭐ Final Note
+
+This project follows **production-style ML lifecycle**:
+
+- Trained model
+- Versioned release
+- Dockerized backend
+- Persistent storage
+- Deterministic inference
