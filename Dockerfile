@@ -2,7 +2,7 @@ FROM python:3.9-slim
 
 WORKDIR /app
 
-# ---- System dependencies for WeasyPrint (ARM + Debian compatible) ----
+# ---- System dependencies for WeasyPrint ----
 RUN apt-get update && apt-get install -y \
     build-essential \
     libcairo2 \
@@ -14,19 +14,22 @@ RUN apt-get update && apt-get install -y \
     gir1.2-glib-2.0 \
     && rm -rf /var/lib/apt/lists/*
 
-# Copy requirements
+# Copy requirements first (Docker cache optimization)
 COPY requirements.txt .
 
 # Install Python dependencies
-RUN pip install --no-cache-dir -r requirements.txt
+RUN pip install --upgrade pip \
+    && pip install --no-cache-dir -r requirements.txt
 
-# Copy app code
+# Copy application code
 COPY . .
 
-EXPOSE 5000
+# Render uses port 8000
+EXPOSE 8000
 
-ENV FLASK_APP=app.py
-ENV FLASK_ENV=production
+# Environment variables
 ENV PYTHONUNBUFFERED=1
+ENV FLASK_ENV=production
 
-CMD ["python", "app.py"]
+# Production WSGI server
+CMD ["gunicorn", "app:app", "--bind", "0.0.0.0:8000"]

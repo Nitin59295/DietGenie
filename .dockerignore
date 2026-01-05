@@ -1,7 +1,13 @@
-venv/
-__pycache__/
+venv
+__pycache__
 *.pyc
-instance/
+*.pyo
+*.pkl
+*.zip
+.DS_Store
 .env
-.git
-.gitignore
+database.db
+instance/
+# ML artifacts not needed in Docker
+dietgenie-ml-model-v1.zip
+model_release_v1/
